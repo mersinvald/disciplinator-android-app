@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Disciplinator</string>
+    <string name="active_minutes">Active Minutes: %d</string>
+    <string name="debt">Debt: %d</string>
+    <string name="state_normal">You\'re all caught up</string>
+    <string name="state_debt">Get up, time to stretch your legs!</string>
+    <string name="state_debt_paused">Relax for a bit, that\'s all for now</string>
+    <string name="state_unknown">Idk WTF it means</string>
+    <string name="time">%02d:00</string>
+    <string name="stat">Active Minutes: %d Debt: %d</string>
+</resources>
