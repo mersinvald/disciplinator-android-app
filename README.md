@@ -4,7 +4,7 @@ This is an app for displaying information provided by the [Disciplinator](https:
 
  - The current state
  - Active minutes and debt for the current hour
- - Daily log hour-by-hour
+ - Day log hour-by-hour
 
 Also it realizes support for [OneSignal](https://onesignal.com/) push notifications service, so it's possible to
 send notifications through a respective [Executor](https://github.com/mersinvald/disciplinator/tree/master/driver/drivers/executor) plugin that works with OneSignal's REST API.
