@@ -1,14 +1,22 @@
 package me.mersinvald.disciplinator;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.onesignal.OneSignal;
 
@@ -21,7 +29,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
+public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefreshListener {
     SwipeRefreshLayout swipeRefreshLayout;
     TextView statusTV;
     TextView activeMinutesTV;
@@ -86,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         protected JSONObject doInBackground(Void... params)
         {
             swipeRefreshLayout.setRefreshing(true);
-            String str = "http://192.168.0.57:8080/";
+            String str = "https://api.disciplinator.mersinvald.me/";
             URLConnection urlConn = null;
             BufferedReader bufferedReader = null;
             try
@@ -107,6 +115,15 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             catch(Exception ex)
             {
                 Log.e("App", "loadDataTask", ex);
+                swipeRefreshLayout.setRefreshing(false);
+                Handler handler = new Handler(Looper.getMainLooper());
+                handler.post(new Runnable() {
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),
+                                "Failed to get an update.",
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
                 return null;
             }
             finally

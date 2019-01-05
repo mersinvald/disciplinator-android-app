@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="User">
+        <EditTextPreference android:title="Username"
+            android:key="userLogin"
+            android:summary="Your username">
+        </EditTextPreference>
+        <EditTextPreference android:title="Email"
+            android:key="userEmail"
+            android:summary="Your email">
+        </EditTextPreference>
+        <EditTextPreference android:title="Day starts at"
+            android:key="userDayStartsAt"
+            android:summary="What time is your day usually starting?">
+        </EditTextPreference>
+        <EditTextPreference android:title="Day ends at"
+            android:key="userDayStartsAt"
+            android:summary="What time is your day usually ends?">
+        </EditTextPreference>
+        <EditTextPreference android:title="Day length"
+            android:key="userDayStartsAt"
+            android:summary="How much hours your usual day lasts?">
+        </EditTextPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Authorization">
+        <EditTextPreference android:title="App ID"
+            android:key="fitbitAppID"
+            android:summary="Please provide your FitBit AppID">
+        </EditTextPreference>
+        <EditTextPreference android:title="App Secret"
+            android:key="fitbitAppSecret"
+            android:summary="Please provide your FitBit App Secret">
+        </EditTextPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Goals">
+        <EditTextPreference android:title="Hourly active minutes goal"
+            android:key="houtlyActivityGoal"
+            android:summary="How much time you'd like to be active hourly?">
+        </EditTextPreference>
+    </PreferenceCategory>
+    <PreferenceScreen android:title="Advanced"
+        android:summary="Warning: may break the calculations"
+        android:key="button_advanced_key"
+        android:persistent="false">
+        <EditTextPreference android:title="Maximum charged debt"
+            android:key="maxHoutlyDebt"
+            android:summary="Debt minutes charged in the current hour">
+        </EditTextPreference>
+        <EditTextPreference android:title="Max accounted active time during hour"
+            android:key="hourlyMaxAccountedActiveTime"
+            android:summary="Active minuted used to pay off debt">
+        </EditTextPreference>
+    </PreferenceScreen>
+</PreferenceScreen>
