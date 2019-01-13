@@ -1,5 +1,7 @@
 ### Disciplinator for Android
 
+#### Note: this project is discontinued and replaced with the [flutter Android/iOS app](https://github.com/mersinvald/disciplinator-app).
+
 This is an app for displaying information provided by the [Disciplinator](https://github.com/mersinvald/disciplinator) project:
 
  - The current state
